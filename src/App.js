@@ -59,6 +59,10 @@ function App() {
       <div id="app">
         <div id="scoreboard-container">
           <Scoreboard
+            // We probably shouldn't pass this prop down at this point.
+            // CAN YOU REFACTOR?
+            // Utilize `useContext` with the `AppContext` in the `<Scoreboard>` component
+            // to get access to the players data instead of receiving it as a prop.
             playersWithScores={fullApplicationState.players}
           />
         </div>
