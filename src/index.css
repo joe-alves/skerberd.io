@@ -14,9 +14,9 @@ html,body {
     display: flex;
 }
 #scoreboard-container {
-    width: 75%;
     padding: 10px;
-    background: rgba(255, 235, 205, 1)
+    background: rgba(255, 235, 205, 1);
+    min-width: 75%;
 }
 #other-stuff-container {
     padding: 10px;

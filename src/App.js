@@ -67,7 +67,7 @@ function App() {
             <AddPlayerForm />
           </div>
           <div>
-            <CurrentStatePrintOut state={fullApplicationState} />
+            <CurrentStatePrintOut />
           </div>
         </div>
       </div>
