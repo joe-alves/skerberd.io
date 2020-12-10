@@ -1,1 +1,43 @@
 /* TODO Add site wide styles */
+* {
+    box-sizing: border-box; /* Just use this always */
+}
+html,body {
+    font-family: 'Helvetica Neue';
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+/* Layout styling */
+#app {
+    min-height: 100vh;
+    display: flex;
+}
+#scoreboard-container {
+    width: 75%;
+    padding: 10px;
+    background: rgba(255, 235, 205, 1)
+}
+#other-stuff-container {
+    padding: 10px;
+    background: #EEE;
+    flex-grow: 1;
+}
+/* Scoreboard */
+#scoreboard {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+/* Other stuff */
+#other-stuff-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#add-new-player-form {
+    text-align: center;
+}
+#cspo {
+    font-size: 10px;
+}
