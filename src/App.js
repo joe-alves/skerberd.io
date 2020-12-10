@@ -4,6 +4,8 @@ import Scoreboard from "./components/Skerberd";
 import AddPlayerForm from "./components/AddPlayerForm";
 import CurrentStatePrintOut from "./components/CSPO";
 
+import AppContext from "./AppContext";
+
 function App() {
   const [fullApplicationState, setFullApplicationState] = useState({
     players: [
@@ -49,22 +51,27 @@ function App() {
   };
 
   return (
-    <div id="app">
-      <div id="scoreboard-container">
-        <Scoreboard
-          playersWithScores={fullApplicationState.players}
-          onScoreUpdate={updateScore}
-        />
-      </div>
-      <div id="other-stuff-container">
-        <div>
-          <AddPlayerForm onAddNewPlayer={addNewPlayer} />
+    <AppContext.Provider value={{ 
+      appState: fullApplicationState, 
+      updateScore: updateScore, 
+      addNewPlayer: addNewPlayer
+    }}>
+      <div id="app">
+        <div id="scoreboard-container">
+          <Scoreboard
+            playersWithScores={fullApplicationState.players}
+          />
         </div>
-        <div>
-          <CurrentStatePrintOut state={fullApplicationState} />
+        <div id="other-stuff-container">
+          <div>
+            <AddPlayerForm />
+          </div>
+          <div>
+            <CurrentStatePrintOut state={fullApplicationState} />
+          </div>
         </div>
       </div>
-    </div>
+    </AppContext.Provider>
   );
 }
 

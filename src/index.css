@@ -28,6 +28,7 @@ html,body {
     display: flex;
     justify-content: space-around;
     text-align: center;
+    flex-wrap: wrap;
 }
 /* Other stuff */
 #other-stuff-container {
@@ -40,4 +41,12 @@ html,body {
 }
 #cspo {
     font-size: 10px;
+}
+
+
+
+/* Andrew's idea */
+.player-score {
+    min-width: 33%;
+    flex-grow: 1;
 }
