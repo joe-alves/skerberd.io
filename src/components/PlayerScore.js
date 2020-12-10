@@ -1,16 +1,21 @@
 import Counter from "./Counter";
 
-const PlayerScore = ({playerName, playerCurrentScore, onScoreChange}) => {
+import {useContext} from "react";
+import AppContext from "../AppContext";
+
+const PlayerScore = ({playerName, playerCurrentScore}) => {
+    const appObject = useContext(AppContext);
+    const updateScore = appObject.updateScore;
     return (
         <div className="player-score">
             <h4>{playerName}</h4>
             <Counter 
                 currentCount={playerCurrentScore} 
                 onIncrement={() => {
-                    onScoreChange(playerName, playerCurrentScore + 1)
+                    updateScore(playerName, playerCurrentScore + 1)
                 }}
                 onDecrement={() => {
-                    onScoreChange(playerName, playerCurrentScore - 1)
+                    updateScore(playerName, playerCurrentScore - 1)
                 }}
             />
         </div>

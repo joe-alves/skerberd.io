@@ -1,17 +1,23 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
-const Form = ({ onAddNewPlayer }) => {
-  const [possibleNewPlayerName, setName] = useState("");
+import AppContext from "../AppContext";
+
+const Form = () => {
+  
+  const appObject = useContext(AppContext);
+  const [possibleNewPlayerName, setName] = useState("Joe");
   return (
     <form id="add-new-player-form" onSubmit={e => {
         e.preventDefault();
-        onAddNewPlayer(possibleNewPlayerName);
+        appObject.addNewPlayer(possibleNewPlayerName);
+        setName("");
     }}>
       <h3>Add a New Player</h3>
       <input
         type="text"
         placeholder="Player Name"
         onChange={(e) => setName(e.target.value)}
+        value={possibleNewPlayerName}
       />
     </form>
   );

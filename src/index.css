@@ -14,9 +14,9 @@ html,body {
     display: flex;
 }
 #scoreboard-container {
-    width: 75%;
     padding: 10px;
-    background: rgba(255, 235, 205, 1)
+    background: rgba(255, 235, 205, 1);
+    min-width: 75%;
 }
 #other-stuff-container {
     padding: 10px;
@@ -28,6 +28,7 @@ html,body {
     display: flex;
     justify-content: space-around;
     text-align: center;
+    flex-wrap: wrap;
 }
 /* Other stuff */
 #other-stuff-container {
@@ -40,4 +41,12 @@ html,body {
 }
 #cspo {
     font-size: 10px;
+}
+
+
+
+/* Andrew's idea */
+.player-score {
+    min-width: 33%;
+    flex-grow: 1;
 }
